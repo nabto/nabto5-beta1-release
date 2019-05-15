@@ -11,3 +11,5 @@ Very rudimentary implementation, for instance all device parameters are just emb
 ```
 
 Parameters are just shown for reference to compare with the iOS app source code, you will need to replace parameters with your own that are registered in the Nabto Cloud console with the fingerprint of your own public key.
+
+Note that the 10 roundtrips measured often have quite high latencies: The "ping" requests are sent immediately after connect, meaning that a P2P connection has not yet been established and relay is used (this is the Nabto5 QuickConnect feature). If continuing to send requests or if waiting a bit, latencies will become lower (if P2P is possible to establish).
