@@ -4,7 +4,7 @@ This repo captures artifacts, documentation and issues for the Nabto5 Beta1 rele
 ## Deliverables in the first beta release
 
 * Embedded SDK for building device applications. Delivered as precompiled libraries for Linux and macOS in this release; full source will be provided later.
-* Client SDK for building client apps. Delivered as precompiled libraries now and in the future. Currently libs for iOS, macOS and Linux are provided (see know limitations below).
+* Client SDK for building client apps. Delivered as precompiled libraries now and in the future. Currently libs for iOS, macOS and Linux are provided (see known limitations below).
 * Cloud Console for solution management.
 * Basestation with full distributed backend infrastructure, ie no stub functionality as in Alpha.
 * Embedded device CLI demo (full source code).
