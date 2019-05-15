@@ -10,14 +10,28 @@ folder. The accompanying header files are located in `include/nabto/`.
 ## Building the demo application
 The demo application can be build using cmake as shown here:
 
-``` 
-mkdir build 
-cd build 
-cmake ../src 
-make -j 
+```
+mkdir build
+cd build
+cmake ../src
+make -j
 ```
 
-This produces an binary called `test_client`
+This produces an binary called `test_client`. It is likely necessary to set the dynamic libray load path to find the Nabto client SDK libs before running. On macOS this is done as follows:
+
+```
+# assumes libnabto_client.dylib is located here
+export DYLD_LIBRARY_PATH=../../cli-demo/lib
+```
+
+on Linux:
+
+```
+# assumes libnabto_client.so is located here
+export LD_LIBRARY_PATH=../../cli-demo/lib
+```
+
+This must be done before running the demo executable.
 
 
 ## Running the demo application
@@ -50,7 +64,7 @@ showcase. Currently, four values are accepted:
    with the `helloWorld` string.
  * `coap-post`: Sends a CoAP POST request to the device which responds
    with the `helloWorld` string.
- 
+
 An example command to start the client is shown below, be sure to
 replace the Product ID, Device ID, and server api key with those
 obtained through the Nabto cloud console.

@@ -19,6 +19,10 @@ This repo captures artifacts, documentation and issues for the Nabto5 Beta1 rele
 * Log configuration has not been fully decided.
 * Documentation is limited to annotation in header files.
 * No association between console users and domains - all console users have access to all Nabto5 entities created in the system. So this means that you should not add any potentially business sensitive information as e.g. product names.
+* Memory leak in iOS client library when establishing a new connection.
+* Device id and product id for embedded devices is not validated in the basestation during attach (against the values entered in the console), only the device's public key is validated.
+
+Note on iOS clients: Your project must include a file with extension .mm to trigger Objective C++ builds, in turn to trigger the C++ runtime to be linked into the applications, needed by the Nabto static client library. For future releases, a higher level wrapper than what is currently provided will ensure this. The clang's libc++ runtime must be chosen (normally the default), not GCC's (libstdc++).
 
 ## To get started, the following path is suggested (outlined in detail in subsequent sections):
 

@@ -167,11 +167,8 @@ static void streamReadDoneCallback(NabtoClientFuture* future, void* data)
             "-----END CERTIFICATE-----\r\n";
 
     const char* serverUrl = "https://pr-wrukmj9.clients.dev.nabto.net";
-    //const char* productId = "pr-zieg9fvm";
     const char* productId = "pr-wrukmj9j";
-    //const char* deviceId = "de-nua4cxab";
     const char* deviceId = "de-jwmawg7z";
-    //const char* serverKey = "sk-998946ba1fc2c64484904eae548f3a3d";
     const char* serverKey = "sk-10945a44533540db82eb56fb62f5b3c5";
 
     [self insertNewObject:[NSString stringWithFormat:@"Connecting to %s::%s...", productId, deviceId]];
@@ -193,10 +190,6 @@ static void streamReadDoneCallback(NabtoClientFuture* future, void* data)
     }
 
     if ((ec = nabto_client_connection_set_device_id(ctx->connection, deviceId)) != NABTO_CLIENT_OK) {
-        [self insertNewObject:[self stringWithNabtoError:@"Error" error:ec]];
-    }
-
-    if ((ec = nabto_client_connection_set_public_key(ctx->connection, clientPublicKey)) != NABTO_CLIENT_OK) {
         [self insertNewObject:[self stringWithNabtoError:@"Error" error:ec]];
     }
 
