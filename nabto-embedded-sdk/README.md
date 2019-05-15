@@ -2,20 +2,20 @@
 The Nabto embedded SDK demo device demonstrates how to start the Nabto
 embedded SDK and use it to stream data between it and a client. The
 demo also shows how to invoke RPC using CoAP. The demo is fully
-implemented in the `src/test_device.c` file. The files located in
-`src/gopt/` are only used to parse command line arguments. The Nabto
+implemented in the `demo/test_device.c` file. The files located in
+`demo/gopt/` are only used to parse command line arguments. The Nabto
 embedded SDK itself is provided through libraries located in
 `lib`. Libraries are provided for Linux and MacOs. The accompanying
 header file is located in `include/nabto/`
 
 ## Building the demo device
-The demo device can be build using cmake as shown here: 
+The demo device can be build using cmake as shown here:
 
-``` 
-mkdir build 
-cd build 
-cmake ../src 
-make -j 
+```
+mkdir build
+cd build
+cmake ../src
+make -j
 ```
 
 This produces an binary called `test_device`
@@ -36,7 +36,7 @@ Once the key is generated, the device can be started using the
 following command, replacing the product ID and device ID with the
 ones generated through the nabto cloud console.
 
-``` 
+```
 ./test_device -p pr-3tayzujn -d de-tsxiqkt9 --hostname a.devices.dev.nabto.net -k key.pem
 ```
 
