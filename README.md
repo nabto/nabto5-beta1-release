@@ -1,16 +1,18 @@
 # Nabto 5 Beta1 Release
 This repo captures artifacts, documentation and issues for the Nabto5 Beta1 release.
 
-This first beta provides early access to the Nabto5 Client and Embedded SDKs as well as a working basestation and the Nabto Cloud Console solution management application.
+## Deliverables in the first beta release
 
-To get started, the following path is suggested (outlined in detail in subsequent sections):
+* Embedded SDK for building device applications. Delivered as precompiled libraries for Linux and macOS in this release; full source will be provided later.
+* Client SDK for building client apps. Delivered as precompiled libraries now and in the future. Currently libs for iOS, macOS and Linux are provided (see know limitations below).
+* Cloud Console for solution management.
+* Basestation with full distributed backend infrastructure, ie no stub functionality as in Alpha.
+* Embedded device CLI demo (full source code).
+* Client app CLI demo (full source code).
+* iOS app (full source and project).
 
-1. obtain access to the Nabto Cloud Console
-2. setup a solution in Nabto Cloud
-3. build and run an embedded device demo
-4. build and run a client demo app
 
-# Limitations and Known Issues in the Beta1 Release
+## Limitations and known issues in the first beta release
 
 * Android support is not yet ready and has not been included in the Beta1 release, an upcoming patch release that includes Android support will follow shortly.
 * API error code representations has not been fully decided. For now, just check for `NABTO_CLIENT_OK` and `NABTO_DEVICE_OK` when checking for success, detailed error codes when status is not OK cannot yet be fully trusted (but will be different than the OK codes in case of error).
@@ -18,6 +20,17 @@ To get started, the following path is suggested (outlined in detail in subsequen
 * Documentation is limited to annotation in header files.
 * No association between console users and domains - all console users have access to all Nabto5 entities created in the system. So this means that you should not add any potentially business sensitive information as e.g. product names.
 
+## To get started, the following path is suggested (outlined in detail in subsequent sections):
+
+1. Obtain access to the Nabto Cloud Console. Described below.
+2. Setup a solution in Nabto Cloud. Described below.
+3. Build and run an embedded device demo. Described in the [embedded SDK demo README](nabto-embedded-sdk/demo/README.md)
+4. build and run a client demo app towards the device. Described in the client SDK [CLI demo README](nabto-client-sdk/cli-demo/README.md) and the [iOS app demo README](nabto-client-sdk/ios-demo/README.md)
+
+The SDK header files are annotated with documentation, useful for understanding the API interaction in the demos:
+
+* [Embedded SDK header file](nabto-embedded-sdk/include/nabto/nabto_device.h)
+* [Client SDK header file](nabto-client-sdk/include/nabto/nabto_client.h)
 
 # Console Access
 
@@ -41,14 +54,3 @@ In the "Fingerprint" field of the new device, enter the public key fingerprint f
 ## Client apps
 
 Client apps need an api key. For a given product, multiple client apps can be created. Click the "Apps" link in the product overview and click the "New App" button.
-
-
-# Embedded SDK and demos
-
-## Creating keypair
-
-```
-openssl ecparam -genkey -name prime256v1 -out <keyfile>
-```
-
-# Client SDK and demos
