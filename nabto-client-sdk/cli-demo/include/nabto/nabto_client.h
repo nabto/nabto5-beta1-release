@@ -311,11 +311,11 @@ nabto_client_connection_set_keep_alive_settings(NabtoClientConnection* connectio
  * fingerprint is used to validate the identity of the remote device.
  *
  * @param connection The connection.
- * @param fingerprint A pointer to an array large enough for the fingerprint.
+ * @param fingerprint A pointer to an array of at least 32 characters.
  * @return NABTO_CLIENT_OK if the fingerprint was copied to the fingerprint parameter.
  */
 NABTO_CLIENT_DECL_PREFIX NabtoClientError NABTO_CLIENT_API
-nabto_client_connection_get_device_fingerprint(NabtoClientConnection* connection, uint8_t* fingerprint);
+nabto_client_connection_get_device_fingerprint_hex(NabtoClientConnection* connection, char* fingerprint);
 
 /**
  * Get the connection type. Use this function to limit the amount of

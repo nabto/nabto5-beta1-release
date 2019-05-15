@@ -255,15 +255,13 @@ int main(int argc, char** argv) {
     if (ec != NABTO_CLIENT_OK) {
         std::cerr << "could not connect to device " << nabto_client_error_get_message(ec) << std::endl;
     } else {
-        uint8_t fingerprint[16];
+        char fingerprint[32];
 
-        ec = nabto_client_connection_get_device_fingerprint(connection.get(), fingerprint);
+        ec = nabto_client_connection_get_device_fingerprint_hex(connection.get(), fingerprint);
         if (ec != NABTO_CLIENT_OK) {
             std::cerr << "could not get remote peer fingerprint" << std::endl;
         } else {
-            // TODO: print fingerprint better
-            std::string fp(reinterpret_cast<const char*>(fingerprint), 16);
-            std::cout << "Connected to device with fingerprint: " << fp << std::endl;
+            std::cout << "Connected to device with fingerprint: " << std::string(fingerprint, 32) << std::endl;
         }
     }
 
