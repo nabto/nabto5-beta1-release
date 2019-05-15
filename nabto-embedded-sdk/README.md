@@ -34,7 +34,7 @@ openssl ecparam -genkey -name prime256v1 -out key.pem
 
 Once the key is generated, the device can be started using the
 following command, replacing the product ID and device ID with the
-once generated through the nabto cloud console.  
+ones generated through the nabto cloud console.
 
 ``` 
 ./test_device -p pr-3tayzujn -d de-tsxiqkt9 --hostname a.devices.dev.nabto.net -k key.pem
