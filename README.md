@@ -57,7 +57,7 @@ Creating a new product in the console is the first step towards running a device
 
 Devices must be added through the console to obtain a device id and register a public key fingerprint, in turn allowing the device to later attach (register with the Nabto basestation). In the product overview, a new device can be created by clicking the "Devices" link for a given product and then clicking "Create New Device".
 
-In the "Fingerprint" field of the new device, enter the public key fingerprint for the keypair to use with the device in question. See the Embedded SDK section below on how to create this keypair and obtain the fingerprint.
+In the "Fingerprint" field of the new device, enter the public key fingerprint for the keypair to use with the device in question. See [the embedded demo](nabto-embedded-sdk/demo/README.md) for info on how to create this keypair and obtain the fingerprint.
 
 ## Client apps
 
