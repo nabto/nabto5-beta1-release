@@ -26,7 +26,9 @@ Note the iOS static lib is delivered as a bzip2 archive due to its size, so unpa
 
 Note on iOS clients: Your project must include a file with extension .mm to trigger Objective C++ builds, in turn to trigger the C++ runtime to be linked into the applications, needed by the Nabto static client library. For future releases, a higher level wrapper than what is currently provided will ensure this. The clang's libc++ runtime must be chosen (normally the default), not GCC's (libstdc++).
 
-## To get started, the following path is suggested (outlined in detail in subsequent sections):
+## Getting started
+
+To get started, the following path is suggested (outlined in detail in the demo READMEs):
 
 1. Obtain access to the Nabto Cloud Console. Described below.
 2. Setup a solution in Nabto Cloud. Described below.
